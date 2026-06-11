@@ -1,4 +1,4 @@
-// Capturando Elementos da Página
+// Elementos de Acessibilidade e AgroIA
 const btnIncrease = document.getElementById('btn-increase');
 const btnDecrease = document.getElementById('btn-decrease');
 const btnContrast = document.getElementById('btn-contrast');
@@ -8,7 +8,7 @@ const iaQuestionSelect = document.getElementById('ia-question');
 const iaResponseBox = document.getElementById('ia-response');
 const iaText = document.getElementById('ia-text');
 
-// 1. Controle de Tamanho da Letra (Acessibilidade)
+// Tamanho de Fonte Dinâmica
 let currentFontSizePercent = 100;
 
 btnIncrease.addEventListener('click', () => {
@@ -25,12 +25,12 @@ btnDecrease.addEventListener('click', () => {
     }
 });
 
-// 2. Alternar Modo Contraste / Escuro
+// Mecanismo Ativador de Alto Contraste
 btnContrast.addEventListener('click', () => {
     document.body.classList.toggle('contrast-mode');
 });
 
-// 3. Mecanismo de Respostas do Assistente AgroIA
+// Respostas Inteligentes AgroIA
 const baseRespostasIA = {
     erosao: "🤖 AgroIA Diagnóstico: Seu solo está perdendo fixação estrutural. Recomendação: Implante imediatamente o Sistema de Plantio Direto e faça curvas de nível no terreno. Manter os restos vegetais da última colheita blinda o chão contra o impacto das chuvas pesadas e retém os adubos.",
     pragas: "🤖 AgroIA Diagnóstico: Alerta de desequilíbrio na fauna local. Recomendação: Utilize o Manejo Integrado de Pragas (MIP). Insira defensores biológicos (Bioinsumos como fungos específicos ou pequenas vespas biológicas) em vez de defensivos químicos puros. Isso limpa a praga sem afastar as abelhas polinizadoras.",
@@ -48,7 +48,7 @@ btnIaPerguntar.addEventListener('click', () => {
         return;
     }
 
-    // Aplica a resposta programada e remove a classe oculta (.hidden)
     iaText.innerText = baseRespostasIA[selecao];
     iaResponseBox.classList.remove('hidden');
 });
+   
